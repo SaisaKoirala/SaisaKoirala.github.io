@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mummu 💙</title>
+
+<style>
+body{
+    margin:0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg,#cfe9ff,#e6f4ff);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* Floating sweets */
+.sweet{
+    position:absolute;
+    font-size:24px;
+    animation: float 8s linear infinite;
+    opacity:0.7;
+}
+@keyframes float{
+    0%{ transform:translateY(100vh) rotate(0deg);}
+    100%{ transform:translateY(-10vh) rotate(360deg);}
+}
+
+/* Card */
+.card{
+    background:white;
+    padding:30px 25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    max-width:320px;
+}
+
+h1{
+    color:#2b7cd3;
+    margin-bottom:10px;
+}
+
+p{
+    color:#444;
+    font-size:16px;
+}
+
+/* Cake emoji */
+.cake{
+    font-size:60px;
+    margin:15px 0;
+}
+
+/* Button */
+button{
+    margin-top:15px;
+    background:#2b7cd3;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:12px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1e5ea5;
+}
+
+#extra{
+    display:none;
+    margin-top:12px;
+    color:#2b7cd3;
+    font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating sweets -->
+<div class="sweet" style="left:10%; animation-delay:0s;">🍬</div>
+<div class="sweet" style="left:30%; animation-delay:2s;">🧁</div>
+<div class="sweet" style="left:50%; animation-delay:4s;">🍭</div>
+<div class="sweet" style="left:70%; animation-delay:1s;">🍩</div>
+<div class="sweet" style="left:85%; animation-delay:3s;">🎂</div>
+
+<div class="card">
+    <h1>Happy Birthday Mom 💙</h1>
+    <div class="cake">🎂</div>
+    <p>
+        Wishing you a day filled with love, happiness,  
+        sweet moments and lots of cake!  
+        You make my world beautiful mummy💕
+        Thankyou so much for everything , you have done for me🥺
+        I'll surely make you feel proud someday......❤️😘
+    </p>
+
+    <button onclick="showLove()">Click for a Surprise 💙</button>
+    <div id="extra">I love you so so so very much mummy🤗💋</div>
+</div>
+
+<script>
+function showLove(){
+    document.getElementById("extra").style.display="block";
+}
+</script>
+
+</body>
+</html>
