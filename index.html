@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -83,7 +83,7 @@ button:hover{
 <body>
 
 <!-- floating sweets -->
-<div class="sweet" style="left:10%; animation-delay:0s;">🍬</div>
+<!-- <div class="sweet" style="left:10%; animation-delay:0s;">🍬</div>
 <div class="sweet" style="left:30%; animation-delay:2s;">🧁</div>
 <div class="sweet" style="left:50%; animation-delay:4s;">🍭</div>
 <div class="sweet" style="left:70%; animation-delay:1s;">🍩</div>
@@ -111,4 +111,165 @@ function showLove(){
 </script>
 
 </body>
+</html> --> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mom 💙</title>
+
+<!-- Confetti library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#cfe9ff,#eaf6ff);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* Card */
+.card{
+    background:white;
+    width:340px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+/* Title */
+h1{
+    color:#2b7cd3;
+    margin:10px 0;
+}
+
+/* Mom photo */
+.photo{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #2b7cd3;
+}
+
+/* Cake */
+.cake{
+    font-size:60px;
+    margin:15px 0;
+}
+
+/* Candle */
+.candle{
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* Buttons */
+button{
+    background:#2b7cd3;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+/* Password screen */
+#login{
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Background music -->
+<audio id="music" autoplay loop>
+<source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🔐 Password Screen -->
+<div id="login" class="card">
+<h2>💙 Special Birthday Surprise 💙</h2>
+<p>Enter password to open</p>
+<input type="password" id="pass">
+<br><br>
+<button onclick="check()">Open Gift 🎁</button>
+</div>
+
+<!-- 🎂 Main card -->
+<div id="main" class="card" style="display:none">
+
+<img src="mom.jpg" class="photo">
+
+<h1>Happy Birthday Mummy💙</h1>
+
+<p>
+May your day be filled with love,  
+sweet happiness and lots of good news❤️  
+You are my biggest blessing🌷
+</p>
+
+<div class="cake">🎂</div>
+
+<div>
+<span class="candle" onclick="blow()">🕯</span>
+<p>Tap candle to blow</p>
+</div>
+
+<p id="wish"></p>
+
+</div>
+
+<script>
+
+/* password */
+function check(){
+let p=document.getElementById("pass").value;
+
+if(p==="momlove"){
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.display="block";
+celebrate();
+}
+else{
+alert("Wrong password");
+}
+}
+
+/* confetti */
+function celebrate(){
+confetti({
+particleCount:200,
+spread:120,
+origin:{y:0.6}
+});
+}
+
+/* blow candle */
+function blow(){
+document.querySelector(".candle").innerHTML="💨";
+document.getElementById("wish").innerHTML=
+"✨ Your wish has been sent to the stars ✨";
+confetti({
+particleCount:150,
+spread:90
+});
+}
+</script>
+
+</body>
 </html>
+
